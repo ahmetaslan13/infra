@@ -29,17 +29,17 @@ jobs:
         env:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
         run: |
-          az login --service-principal -u "74e58dcc-5d91-4b1b-959a-ae913c5e7d46" -p "$ARM_CLIENT_SECRET" --tenant "b6f9f524-e9ad-419e-ba1d-d931e71a49e7"
+          az login --service-principal -u "7fc5a120-b50a-4f25-b47f-087e16e6d1ec" -p "$ARM_CLIENT_SECRET" --tenant "b6f9f524-e9ad-419e-ba1d-d931e71a49e7"
           az account list
           
-      - name: Apply
+      - name: Plan
         env: 
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
         run: |
           export ARM_SUBSCRIPTION_ID=6373a576-34f3-45e5-b060-222a851b6762
           export ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET
           export ARM_TENANT_ID=b6f9f524-e9ad-419e-ba1d-d931e71a49e7
-          export ARM_CLIENT_ID=74e58dcc-5d91-4b1b-959a-ae913c5e7d46
+          export ARM_CLIENT_ID=7fc5a120-b50a-4f25-b47f-087e16e6d1ec
           export ARM_LOCATION=canadacentral
           terraspace up bcp -auto-approve
           
